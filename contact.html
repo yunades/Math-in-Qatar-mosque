@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ارائكم+المصادر المستخدمة</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>المصادر المستخدمة...آرائكم</h1>
+    <br>
+  <nav>
+    <a href="main_page.html">الصفحة الرئيسية</a>
+    <a href="about katara masjid.html">مقدمه عن مسجد كتارا </a>
+    <a href="maths.html">الجمال الرياضي في مسجد كتارا</a>
+    <a href="islamic.html">علاقة الدين الإسلامي بالعمارة</a>
+    <a href="both.html">الرياضيات في الزخارف الإسلامية</a>
+    <a href="contact.html">آرائكم</a>
+  </nav>
+  <h2>المصادر المستخدمة :</h2>
+ <ul>
+  <li>	1.	Wikipedia – Katara Mosque</li>
+  <li>	2.	Katara Cultural Village Official Website</li>
+  <li>	3.	Mosques of the World</li>
+ </ul>
+ <h3>آرائكم :</h3>
+ <form id="contactForm" onsubmit="sendEmail(event)">
+   <label for="name">الاسم:</label><br>
+   <input type="text" id="name" name="name" required style="width: 100%; max-width: 500px; padding: 8px; margin: 6px 0; box-sizing: border-box;">
+   <br>
+    <label for="email">البريد الإلكتروني:</label><br>
+   <input type="email" id="email" name="email" required style="width: 100%; max-width: 500px; padding: 8px; margin: 6px 0; box-sizing: border-box;">
+   <br>
+   <label for="comment">التعليق:</label><br>
+   <textarea id="comment" name="comment" rows="5" required style="width: 100%; max-width: 500px; padding: 8px; margin: 6px 0; box-sizing: border-box;"></textarea>
+   <br>
+   <button type="submit" style="background: rgb(90, 143, 137); color: rgb(222, 195, 157); padding: 10px 18px; border: none; border-radius: 8px; cursor: pointer; font-family: 'Courier New', Courier, monospace; font-size: 20px; font-weight: bolder;">إرسال</button>
+ </form>
+
+ <script>
+   function sendEmail(event) {
+     event.preventDefault();
+     const name = document.getElementById('name').value.trim();
+     const email = document.getElementById('email').value.trim();
+     const comment = document.getElementById('comment').value.trim();
+
+     const subject = encodeURIComponent('رسالة من صفحة آرائكم');
+     const body = encodeURIComponent(
+       'الاسم: ' + name + '\n' +
+       'البريد الإلكتروني: ' + email + '\n\n' +
+       'التعليق:\n' + comment
+     );
+
+     window.location.href = 'mailto:aishasamra303@gmail.com?subject=' + subject + '&body=' + body;
+   }
+ </script>
+</body>
+</html>
